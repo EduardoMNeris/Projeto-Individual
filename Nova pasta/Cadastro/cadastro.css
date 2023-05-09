@@ -77,7 +77,7 @@ a:hover {
     color: white;
 }
 
-button:hover {
+.header button:hover {
     width: 160px;
     height: 55px; 
     background-color: #cb2229; 
@@ -107,7 +107,7 @@ article {
     width: 50%;
     justify-content: center;
     align-items: center;
-    background: url(../AAA.jpg);
+    background: url(../img/AAA.jpg);
     background-size: cover;
     background-position: center;
 }

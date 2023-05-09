@@ -6,20 +6,16 @@ body {
     margin: 0;
 }   
 
-.header {
-    width: 100%;
-    background-color: rgb(233, 227, 227);
-    border-bottom: 5px solid #cb2229;
-}
-
 .container {
     display: flex;
     width: 80%;
     margin: auto;
 }
 
-.header img {
-    width: 220px;
+/* INICIO DA HEADER */
+.header {
+    width: 100%;
+    background-color: rgb(233, 227, 227);   
 }
 
 .header .container {
@@ -29,11 +25,14 @@ body {
     height: 150px;
 }
 
+.header img {
+    width: 220px;
+}
+
 .navBar {
     width: 450px;
     display: flex;
     list-style: none;
-    color: #2a2016;
     justify-content: space-evenly;
     font-size: 17px;
     padding: 40px 40px 40px 40px;
@@ -87,11 +86,13 @@ button:hover {
 a button:hover {
     color: #fff;
 }
+/* FIM DA HEADER */
 
+/* INICIO DO BANNER */
 .banner {
     width: 100%;
     height: 600px;
-    background: url(../background.jpg);
+    background: url(../img/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -110,7 +111,7 @@ a button:hover {
     justify-content: end;
     font-size: 50px;
     font-weight: 800;
-    color: #f4e2cc;
+    color: #f4decc;
     margin-left: 30px;
 }
 
@@ -118,7 +119,9 @@ a button:hover {
     width: 500px;
     font-size: 25px; 
 }
+/* FIM DO BANNER */
 
+/* INICIO DA SOCIAL */
 .social {
     display: flex;
     justify-content: center;
@@ -149,16 +152,19 @@ a button:hover {
 }
 
 hr {
+    display: flex;
+    height: 5px;
     background-color: #cb2229;
     border: none;
-    display: flex;
 }
 
 .social img {
    border-radius: 10px;
    box-shadow: 10px 10px 30px black;
 }
+/* FIM DA SOCIAL */
 
+/* INICIO DO CARD */
 .card {
     background-color:rgb(56, 52, 52);
     display: flex;
@@ -208,9 +214,85 @@ hr {
     background-color: #cb2229; 
     color: white;
 }
+/* FIM DO CARD */
+
+/* INICIO DA CAPA */
+.capa{
+    display: flex;
+    width: 100%;
+    height: 600px;
+    background: url(../img/monster.jpeg);
+    background-size: cover;
+} 
+
+.capa .container {
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #00000096
+}
+/* FIM DA CAPA */
+
+/* SOBRE */
+.sobre {
+    display: flex;
+    width: 100%;
+    height: 600px;
+}
+
+aside {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/ghost.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+aside .container {
+    width: 100%;
+    height: 100%;
+    background-color: #00000096;
+}
+
+article {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: #a7a19c;
+}
+
+/* INICIO DO FUNDOCONTATO */
+.fundoContato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 400px;
+    background-color: rgb(233, 227, 227);
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+.fundoContato:hover {
+    width: 350px;
+    height: 450px;
+    box-shadow: 10px 10px 10px #000000;
+}
+
+.fundoContato span {
+    font-weight: 800;
+    text-align: center;
+}
+
+.fundoContato img {
+    width: 30%;
+}
+/* FIM DO FUNDOCONTATO */
 
 /* FOOTER */
-
 .footer {
     background-color: #cb2229;
     height: 100px;

@@ -77,7 +77,7 @@ a:hover {
     color: white;
 }
 
-button:hover {
+.header button:hover {
     width: 160px;
     height: 55px; 
     background-color: #cb2229; 
@@ -99,7 +99,7 @@ aside {
     width: 50%;
     justify-content: center;
     align-items: center;
-    background: url(../DED.jpg);
+    background: url(../img/DED.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -111,8 +111,6 @@ article {
     align-items: center;
     background-color: #830a0e;
 }
-
-
 
 /* FOOTER */
 
