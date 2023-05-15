@@ -60,12 +60,10 @@ a:hover {
 } 
 
 .header button {
-    width: 150px;
-    height: 50px;
+    width: 100px;
+    height: 40px;
     border:  none;
-    border-radius: 10px;
     background-color: #cb2229;
-    box-shadow:  2px 2px 5px black;
     cursor: pointer;
     transition-duration: 0.4s;
 }
@@ -77,9 +75,9 @@ a:hover {
     color: white;
 }
 
-.header button:hover {
-    width: 160px;
-    height: 55px; 
+button:hover {
+    width: 110px;
+    height: 50px; 
     background-color: #cb2229; 
     color: white;
 }
@@ -170,7 +168,7 @@ option {
     color: #fff;
 }
 
-button {
+.quiz button {
     width: 200px;
     height: 60px;
     border: none;

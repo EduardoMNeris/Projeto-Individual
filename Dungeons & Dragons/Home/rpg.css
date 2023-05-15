@@ -59,12 +59,10 @@ a:hover {
 } 
 
 .header button {
-    width: 150px;
-    height: 50px;
+    width: 100px;
+    height: 40px;
     border:  none;
-    border-radius: 10px;
     background-color: #cb2229;
-    box-shadow:  2px 2px 5px black;
     cursor: pointer;
     transition-duration: 0.4s;
 }
@@ -77,8 +75,8 @@ a:hover {
 }
 
 button:hover {
-    width: 160px;
-    height: 55px; 
+    width: 110px;
+    height: 50px; 
     background-color: #cb2229; 
     color: white;
 }
@@ -126,7 +124,7 @@ a button:hover {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #a7a19c;
+    background-color: #535050;
     height: 550px;
 }
 
@@ -160,7 +158,7 @@ hr {
 
 .social img {
    border-radius: 10px;
-   box-shadow: 10px 10px 30px rgb(78, 77, 77);
+   box-shadow: 0px 10px 30px rgb(0, 0, 0);
 }
 /* FIM DA SOCIAL */
 
@@ -198,7 +196,6 @@ hr {
     color: #fff;
     font-size: 20px;
     font-weight: 800;
-    box-shadow:  2px 2px 5px black;
     cursor: pointer;
     transition-duration: 0.4s;
 }
@@ -243,8 +240,6 @@ hr {
 
 aside {
     width: 50%;
-    justify-content: center;
-    align-items: center;
     background: url(../img/ghost.jpeg);
     background-position: center;
     background-size: cover;
@@ -257,10 +252,12 @@ aside .container {
 }
 
 article {
+    display: flex;
+    flex-direction: column;
     width: 50%;
     justify-content: center;
     align-items: center;
-    background-color: #a7a19c;
+    background-color: #535050;
 }
 
 /* INICIO DO FUNDOCONTATO */
