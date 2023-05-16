@@ -9,7 +9,6 @@ body {
 .header {
     width: 100%;
     background-color: rgb(233, 227, 227);
-    border-bottom: 5px solid #cb2229;
 }
 
 .container {
