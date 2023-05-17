@@ -108,14 +108,15 @@ a button:hover {
     flex-direction: column;
     justify-content: end;
     font-size: 50px;
-    font-weight: 800;
+    font-weight: bold;
     color: #f4decc;
     margin-left: 30px;
 }
 
 .info p {
-    width: 500px;
+    width: 550px;
     font-size: 25px; 
+    font-style: italic;
 }
 /* FIM DO BANNER */
 
@@ -132,6 +133,7 @@ a button:hover {
     width: 100%;
     justify-content: space-evenly;
     text-align: end;
+    align-items: center;
 }
 
 .social .info {
@@ -193,7 +195,7 @@ hr {
     background-color: #cb2229;
     color: #fff;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: bold;
     cursor: pointer;
     transition-duration: 0.4s;
 }
