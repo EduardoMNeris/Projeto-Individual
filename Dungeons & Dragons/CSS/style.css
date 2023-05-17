@@ -137,7 +137,7 @@ a button:hover {
     height: 450px;
     padding: 10px 10px 10px 10px;
     align-items: center;
-    background-color: #c9252c;
+    background-color: #201f1e;
 }
 
 .quiz .pergunta {
@@ -162,19 +162,19 @@ select {
     height: 40px;
     font-size: 15px;
     font-weight: 600;
-    background-color: #201f1e;
+    background-color: #dad0d0;
     border: none;
-    color: #fff;
+    color: #000000;
 }
 
 option {
     width: 250px;
     height: 40px;
     font-size: 15px;
-    background-color: #201f1e;
+    background-color: #dad0d0;
     border-radius: 5px;
     border: none;
-    color: #fff;
+    color: #000000;
 }
 
 .quiz button {
