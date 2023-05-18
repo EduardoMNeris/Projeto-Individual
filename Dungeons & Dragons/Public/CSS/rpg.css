@@ -22,75 +22,79 @@ body {
     width: 100%;
     justify-content: space-evenly;
     align-items: center; 
-    height: 150px;
+    height: 130px;
 }
 
 .header img {
     width: 220px;
 }
-
-.navBar {
-    width: 450px;
-    display: flex;
-    list-style: none;
-    justify-content: space-evenly;
-    font-size: 17px;
-    padding: 40px 40px 40px 40px;
-}
-
-li b {
-    color: #cb2229;
-}
-
-ul img {
-    width: 100px;
-    height: 100px;
-}
-
-a {
-    text-decoration: none;
-    font-weight: 700;
-    color: #000000;
-}
-
-a:hover {
-    color: #cb2229;
-    transition: 0.3s all;
-} 
-
-.header button {
-    width: 100px;
-    height: 40px;
-    border:  none;
-    background-color: #cb2229;
-    cursor: pointer;
-    transition-duration: 0.4s;
-}
-
-.header a button {
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 700;
-    color: white;
-}
-
-button:hover {
-    width: 110px;
-    height: 50px; 
-    background-color: #cb2229; 
-    color: white;
-}
-
-a button:hover {
-    color: #fff;
-}
 /* FIM DA HEADER */
+
+/* INICIO DA SUB-HEADER */
+.sub-header {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(56, 52, 52);
+}
+  .sub-header a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+ 
+  .subnav {
+    float: left;
+    overflow: hidden;
+  }
+
+  .subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .sub-header a:hover, .subnav:hover .subnavbtn {
+    background-color: #cb2229;
+  }
+  
+  .subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #cb2229;
+    width: 100%;
+    z-index: 1;
+  }
+ 
+  .subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+  }
+  
+  .subnav:hover .subnav-content {
+    display: block;
+  }
+  /* FIM DA SUB-HEADER */
 
 /* INICIO DO BANNER */
 .banner {
     width: 100%;
     height: 600px;
-    background: url(../img/background.jpg);
+    background: url(../img/background.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -111,12 +115,19 @@ a button:hover {
     font-weight: bold;
     color: #f4decc;
     margin-left: 30px;
+    text-align: justify;
 }
 
 .info p {
     width: 550px;
     font-size: 25px; 
     font-style: italic;
+}
+
+iframe {
+    margin-left: 30px;
+    border-radius: 10px;
+    border: #fff solid 2px;
 }
 /* FIM DO BANNER */
 
@@ -148,7 +159,7 @@ a button:hover {
 }
 
 .social .info p {
-    text-align: end;
+    text-align: justify;
 }
 
 hr {
@@ -206,7 +217,7 @@ hr {
 }
 
 .card button:hover {
-    width: 450px;
+    width: 500px;
     height: 60px; 
     background-color: #cb2229; 
     color: white;
@@ -232,7 +243,7 @@ hr {
 /* FIM DA CAPA */
 
 /* SOBRE */
-.sobre {
+.mestre {
     display: flex;
     width: 100%;
     height: 600px;
