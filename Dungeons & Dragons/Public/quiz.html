@@ -1,187 +1,204 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../Public//CSS/style.css">
-    <title>Quiz</title>
-  </head>
-  <body>
 
-    <div class="header">
-      <div class="container">
-        <a href="../Public/login.html"><button>Login</button></a>
-          <ul class="navBar">
-              <li><a href="../Public/rpg.html">Home</a></li>
-              <li><a href="">isnci</a></li>
-              <li><a href="../Public/quiz.html"><b>Quiz</b></a></li>
-              <li><a href="https://www.heroforge.com/" target="_blank">Simulador</a></li>
-          </ul>
-          <h1 class="titulo"><img src="../Public/Img/logo.png"></h1>
-      </div>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../Public//CSS/style.css">
+  <title>Quiz</title>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="container">
+      <a href="./dashboard.html"><img class="logo" src="../Public/Img/logo.png"></a href="">
+    </div>
   </div>
- 
-    <div class="banner">
+
+  <div class="sub-header">
+    <a href="./rpg.html">Sair</a>
+    <div class="subnav">
+      <button class="subnavbtn">Comunidade<i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="#company">Company</a>
+        <a href="#team">Team</a>
+        <a href="#careers">Forums</a>
+      </div>
+    </div>
+    <div class="subnav">
+      <button class="subnavbtn">Quiz<i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="./quiz.html">Quiz</a>
+        <a href="#mestre">Deliver</a>
+        <a href="#package">Package</a>
+        <a href="#express">Express</a>
+      </div>
+    </div>
+    <div class="subnav">
+      <button class="subnavbtn">Simulador<i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="#link1">Link 1</a>
+        <a href="#link2">Link 2</a>
+        <a href="#link3">Link 3</a>
+        <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
+      </div>
+    </div>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="banner">
+    <div class="container">
       <span class="info">Quiz de Personagem:</span>
       <span class="nav">Que classe eu devo interpretar?</span>
       <img src="../Public/Img/personagens.png" alt="">
       <span class="nav-info">Faça este quiz para saber qual das cinco principais classes mais combina com você.
       </span>
     </div>
-
-    <div class="quiz">
-      <div class="blur">
-      <span>1. Escolha a Alternativa Que Melhor te Classifique</span>
-        <div class="pergunta">
-          <select name="" id="select_p1">
-            <option value="1">Aventureiro</option>
-            <option value="2">Introspectivo</option>
-            <option value="3">Curioso</option>
-            <option value="4">Ganancioso</option>
-            <option value="5">Intuitivo</option>
-          </select>
+    
+      <div class="quiz">
+        <div class="blur info">
+          <span>Escolha as Alternativas que Melhor te Classifiquem</span>
+          <div class="pergunta">
+            <select name="" id="select_p1">
+              <option value="Guerreiro">Aventureiro</option>
+              <option value="Barbaro">Introspectivo</option>
+              <option value="Bardo">Curioso</option>
+              <option value="Ladino">Ganancioso</option>
+              <option value="Mago">Intuitivo</option>
+            </select>
+          </div>
+          <div class="pergunta">
+            <select name="" id="select_p2">
+              <option value="Barbaro">Forte</option>
+              <option value="Guerreiro">Resistente</option>
+              <option value="Ladino">Habilidoso</option>
+              <option value="Mago">Lógico</option>
+              <option value="Bardo">Carismático</option>
+            </select>
+          </div>
+          <div class="pergunta">
+            <select name="" id="select_p3">
+              <option value="Guerreiro">Paz</option>
+              <option value="Mago">Conhecimento</option>
+              <option value="Bardo">Fama</option>
+              <option value="Ladino">Fortuna</option>
+              <option value="Barbaro">Sobrevivência</option>
+            </select>
+          </div>
+          <div class="pergunta">
+            <select name="" id="select_p4">
+              <option value="Ladino">Observador</option>
+              <option value="Barbaro">Solitário</option>
+              <option value="Bardo">Galanteador</option>
+              <option value="Mago">Estudioso</option>
+              <option value="Guerreiro">Companheiro</option>
+            </select>
+          </div>
         </div>
-        <div class="pergunta">
-          <select name="" id="select_p2">
-            <option value="1">Forte</option>
-            <option value="2">Resistente</option>
-            <option value="3">Habilidoso</option>
-            <option value="4">Lógico</option>
-            <option value="5">Carismático</option>
-          </select>
-        </div>
-        <div class="pergunta">
-          <select name="" id="select_p3">
-            <option value="1">Paz</option>
-            <option value="2">Conhecimento</option>
-            <option value="3">Fama</option>
-            <option value="4">Fortuna</option>
-            <option value="5">Sobrevivência</option>
-          </select>
-        </div>
-        <div class="pergunta">
-          <select name="" id="select_p3">
-            <option value="1">Observador</option>
-            <option value="2">Solitário</option>
-            <option value="3">Galanteador</option>
-            <option value="4">Estudioso</option>
-            <option value="5">Companheiro</option>
-          </select>
-      </div>
-    </div>
-      <button onclick="Simular()">Simule Aqui</button>
-      <div id="div_personagem"></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <h4>Copyright by Eduardo Medina &copy; 2023</h4>
-        <span class="version">v1.0.0</span>
+        <button onclick="Simular()">Simule Aqui</button>
+        <div id="div_personagem"></div>
       </div>
   </div>
 
-  </body>
+</body>
 
 </html>
 
 <script>
 
-    var Guerreiro = 0;
-    var Barbaro = 0;
-    var Ladino = 0;
-    var Mago = 0;
-    var Bardo = 0;
+  var Resultado = 0;
 
-    function Simular(){
-        var P1 = select_p1.value
-        var P2 = select_p2.value
-        var P3 = select_p3.value
+  function Simular() {
+    var P1 = select_p1.value
+    var P2 = select_p2.value
+    var P3 = select_p3.value
+    var P4 = select_p4.value
 
-        // Pergunta 1
-        if (P1 == '1'){
-          Guerreiro += 1;
-        }
-        else if (P1 == '2'){
-          Barbaro += 1;
-        }
-        else if (P1 == '3'){
-          Bardo += 1;
-        }
-        else if (P1 == '4'){
-          Ladino += 1;
-        }
-        else {
-          Mago += 1;
-        }
-
-        // Pergunta 2 
-        if (P2 == '1'){
-          Barbaro += 1;
-        }
-        else if (P2 == '2'){
-          Guerreiro += 1;
-        }
-        else if (P2 == '3'){
-          Ladino += 1;
-        }
-        else if (P2 == '4'){
-          Mago += 1;
-        }
-        else {
-          Bardo += 1;
-        }
-
-         // Pergunta 3
-         if (P3 == '1'){
-          Guerreiro += 1;
-        }
-        else if (P3 == '2'){
-          Mago += 1;
-        }
-        else if (P3 == '3'){
-          Bardo += 1;
-        }
-        else if (P3 == '4'){
-          Ladino += 1;
-        }
-        else {
-          Barbaro += 1;
-        }
-        // Pergunta 4
-        if (P3 == '1'){
-          Ladino += 1;
-        }
-        else if (P3 == '2'){
-          Barbaro += 1;
-        }
-        else if (P3 == '3'){
-          Bardo += 1;
-        }
-        else if (P3 == '4'){
-          Mago += 1;
-        }
-        else {
-          Guerreiro += 1;
-        }
-
-        // Resultado
-        if (Guerreiro > Mago && Guerreiro > Barbaro && Guerreiro > Bardo && Guerreiro > Ladino){
-          div_personagem.innerHTML = `Guerreiro`
-        }
-        else if (Ladino > Mago && Ladino > Barbaro && Ladino > Bardo && Ladino > Guerreiro){
-          div_personagem.innerHTML = `Ladino`
-        }
-        else if (Mago > Guerreiro && Mago > Barbaro && Mago > Bardo && Mago > Ladino){
-          div_personagem.innerHTML = `Mago`
-        }
-        else if (Bardo > Mago && Bardo > Guerreiro && Bardo > Bardo && Bardo > Ladino){
-          div_personagem.innerHTML = `Bardo`
-        }
-        else {
-          div_personagem.innerHTML = `Barbaro`
-        }
+    // Pergunta 1
+    if (P1 == 'Guerreiro') {
+      Resultado += 1;
     }
+    else if (P1 == 'Barbaro') {
+      Resultado += 2;
+    }
+    else if (P1 == 'Ladino') {
+      Resultado += 3;
+    }
+    else if (P1 == 'Bardo') {
+      Resultado += 4;
+    }
+    else {
+      Resultado += 5;
+    }
+
+    // Pergunta 2 
+    if (P2 == 'Guerreiro') {
+      Resultado += 1;
+    }
+    else if (P2 == 'Barbaro') {
+      Resultado += 2;
+    }
+    else if (P2 == 'Ladino') {
+      Resultado += 3;
+    }
+    else if (P2 == 'Bardo') {
+      Resultado += 4;
+    }
+    else {
+      Resultado += 5;
+    }
+
+    // Pergunta 3
+    if (P3 == 'Guerreiro') {
+      Resultado += 1;
+    }
+    else if (P3 == 'Barbaro') {
+      Resultado += 2;
+    }
+    else if (P3 == 'Ladino') {
+      Resultado += 3;
+    }
+    else if (P3 == 'Bardo') {
+      Resultado += 4;
+    }
+    else {
+      Resultado += 5;
+    }
+    // Pergunta 4
+    if (P4 == 'Guerreiro') {
+      Resultado += 1;
+    }
+    else if (P4 == 'Barbaro') {
+      Resultado += 2;
+    }
+    else if (P4 == 'Ladino') {
+      Resultado += 3;
+    }
+    else if (P4 == 'Bardo') {
+      Resultado += 4;
+    }
+    else {
+      Resultado += 5;
+    }
+
+    // Resultado
+    if (Resultado <= 4) {
+      div_personagem.innerHTML = `<img src="./Img/JPEG.jpg"><span>There's two main reasons why the fighter is one of the most popular classes in Dungeons & Dragons: they're easy to pick up and they're effective. Your selection of subclasses in the Player’s Handbook allow you to create the warring legend of your dreams — be a mounted knight, a deadly bowman, a warrior-caster hybrid, or something else.</span>`
+    }
+    else if (Resultado <= 8) {
+      div_personagem.innerHTML = '<img src="./Img/JPEG.jpg"><span>The barbarian is the perfect class for those who like to run into the midst of danger and start swinging away at enemies to deal big damage. They have access to Rage, which allows them to deal additional damage with melee attacks while also taking reduced damage from common sources of damage. They are a relatively straightforward, hack-and-slash class, making them great for new D&D players.</span>'
+    }
+    else if (Resultado <= 12) {
+      div_personagem.innerHTML = '<img src="./Img/JPEG.jpg"><span>The rogue is the premiere stealth class in Dungeons & Dragons. The Sneak Attack feature allows you to deal massive amounts of damage, and Cunning Action allows you to take the Dash, Disengage, or Hide action as a bonus action, giving you a lot of maneuverability in combat. If you like sneaking around, picking locks, stealing treasure, and assassinating your enemies, rogue is the class for you.</span>'
+    }
+    else if (Resultado <= 16) {
+      div_personagem.innerHTML = `<img src="./Img/JPEG.jpg"><span>Bards use the arts to fuel their magic and to support allies on the battlefield. Thanks to their Jack of All Trades feature, they can be good at just about any ability check you'll need to make. Their spell selection is limited until you get Magical Secrets, which lets you learn two spells from any class. Overall, the bard is great if you like helping your friends succeed in and out of combat and enjoy talking up non-player characters (NPCs).</span>`
+    }
+    else if (Resultado <= 20) {
+      div_personagem.innerHTML = '<img src="./Img/JPEG.jpg"><span>Wizards are the iconic spell-slingers of Dungeons & Dragons. They have the biggest selection of spells available and have numerous specializations that allow them to either focus on one of the particular schools of magic, or a particular facet of spellcasting. WIth a huge array of spells, and a great variety of subclasses, wizards are one the most flexible and most advanced classes in the game.</span>'
+    }
+  }
 
 </script>
