@@ -47,11 +47,33 @@
         </div>
         <a href="#contact">Contact</a>
     </div>
-
-    <div class="banner">
-        <img src="./Img/LOGO_720.png" alt="">
+    
+    <div>
+        <button onclick="sortear()">D20</button>
+        <div id="div_dado"></div>
     </div>
 
 </body>
 
 </html>
+
+<script>
+
+var listaD20 = [
+    '<img src="https://thumbs.dreamstime.com/b/dados-brancos-com-os-pontos-pretos-que-penduram-na-meia-exibi%C3%A7%C3%A3o-n%C3%BAmero-da-volta-isolados-no-fundo-preto-130992904.jpg" alt="">', 
+    '<img src="https://thumbs.dreamstime.com/b/dados-brancos-com-os-pontos-pretos-que-penduram-na-meia-exibi%C3%A7%C3%A3o-n%C3%BAmero-da-volta-isolados-no-fundo-verde-130993043.jpg" alt="">', 
+    '<img src="https://thumbs.dreamstime.com/b/dados-brancos-com-os-pontos-pretos-que-penduram-na-meia-exibi%C3%A7%C3%A3o-n%C3%BAmero-da-volta-isolados-no-fundo-branco-130993556.jpg" alt="">', 
+    '<img src="https://thumbs.dreamstime.com/b/dados-brancos-com-os-pontos-pretos-que-penduram-na-meia-exibi%C3%A7%C3%A3o-n%C3%BAmero-da-volta-isolados-no-fundo-verde-130993186.jpg" alt="">',
+    '<img src="https://thumbs.dreamstime.com/b/dados-brancos-com-os-pontos-pretos-que-penduram-na-meia-exibi%C3%A7%C3%A3o-n%C3%BAmero-da-volta-isolados-no-fundo-branco-130993543.jpg" alt="">',
+    '<img src="https://thumbs.dreamstime.com/z/dados-brancos-com-os-pontos-pretos-que-penduram-na-meia-exibi%C3%A7%C3%A3o-n%C3%BAmero-da-volta-isolados-no-fundo-preto-130992601.jpg" alt="">'
+]
+
+function sortear() {
+    var intervalo = listaD20.length
+    var aleatorio = (Math.random()*intervalo + 1).toFixed(0);
+    
+    div_dado.innerHTML = listaD20[aleatorio - 1]
+
+}
+
+</script>
