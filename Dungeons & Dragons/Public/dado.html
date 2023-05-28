@@ -41,25 +41,27 @@
             <button class="subnavbtn">Simulador<i class="fa fa-caret-down"></i></button>
             <div class="subnav-content">
                 <a href="./dado.html">Jogar os dados</a>
-                <a href="#link2">Link 2</a>
+                <a href="./repetição.html">Estrutura de Repetição</a>
                 <a href="#link3">Link 3</a>
                 <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
             </div>
         </div>
         <a href="#contact">Contact</a>
     </div>
-    
-        <div class="fundo">
+
+    <div class="fundo">
+        <div class="fundo-dado">
             <div class="dado">
                 <div id="div_dado"></div>
-                <div class="botao"> 
-                <button onclick="sortear_d20()">D20</button>
-                <button onclick="sortear_d12()">D12</button>
-                <button onclick="sortear_d8()">D8</button>
-                <button onclick="sortear_d6()">D6</button>
+                <div class="botao">
+                    <button onclick="sortear_d20()">D20</button>
+                    <button onclick="sortear_d12()">D12</button>
+                    <button onclick="sortear_d8()">D8</button>
+                    <button onclick="sortear_d6()">D6</button>
                 </div>
             </div>
         </div>
+    </div>
 
 </body>
 
@@ -67,104 +69,104 @@
 
 <script>
 
-var listaD20 = [
-    '<img src="./Img/1.png" alt="">', 
-    '<img src="./Img/2.png" alt="">',
-    '<img src="./Img/3.png" alt="">',
-    '<img src="./Img/4.png" alt="">',
-    '<img src="./Img/5.png" alt="">',
-    '<img src="./Img/6.png" alt="">',
-    '<img src="./Img/7.png" alt="">',
-    '<img src="./Img/8.png" alt="">',
-    '<img src="./Img/9.png" alt="">',
-    '<img src="./Img/10.png" alt="">',
-    '<img src="./Img/11.png" alt="">',
-    '<img src="./Img/12.png" alt="">',
-    '<img src="./Img/13.png" alt="">',
-    '<img src="./Img/14.png" alt="">',
-    '<img src="./Img/15.png" alt="">',
-    '<img src="./Img/16.png" alt="">',
-    '<img src="./Img/17.png" alt="">',
-    '<img src="./Img/18.png" alt="">',
-    '<img src="./Img/19.png" alt="">',
-    '<img src="./Img/20.png" alt="">'
-]
+    var listaD20 = [
+        '<img src="./Img/1.png" alt="">',
+        '<img src="./Img/2.png" alt="">',
+        '<img src="./Img/3.png" alt="">',
+        '<img src="./Img/4.png" alt="">',
+        '<img src="./Img/5.png" alt="">',
+        '<img src="./Img/6.png" alt="">',
+        '<img src="./Img/7.png" alt="">',
+        '<img src="./Img/8.png" alt="">',
+        '<img src="./Img/9.png" alt="">',
+        '<img src="./Img/10.png" alt="">',
+        '<img src="./Img/11.png" alt="">',
+        '<img src="./Img/12.png" alt="">',
+        '<img src="./Img/13.png" alt="">',
+        '<img src="./Img/14.png" alt="">',
+        '<img src="./Img/15.png" alt="">',
+        '<img src="./Img/16.png" alt="">',
+        '<img src="./Img/17.png" alt="">',
+        '<img src="./Img/18.png" alt="">',
+        '<img src="./Img/19.png" alt="">',
+        '<img src="./Img/20.png" alt="">'
+    ]
 
-var listaD12 = [
-    '<img src="./Img/21.png" alt="">', 
-    '<img src="./Img/22.png" alt="">',
-    '<img src="./Img/23.png" alt="">',
-    '<img src="./Img/24.png" alt="">',
-    '<img src="./Img/25.png" alt="">',
-    '<img src="./Img/26.png" alt="">',
-    '<img src="./Img/27.png" alt="">',
-    '<img src="./Img/28.png" alt="">',
-    '<img src="./Img/29.png" alt="">',
-    '<img src="./Img/30.png" alt="">',
-    '<img src="./Img/31.png" alt="">',
-    '<img src="./Img/32.png" alt="">'
-]
+    var listaD12 = [
+        '<img src="./Img/21.png" alt="">',
+        '<img src="./Img/22.png" alt="">',
+        '<img src="./Img/23.png" alt="">',
+        '<img src="./Img/24.png" alt="">',
+        '<img src="./Img/25.png" alt="">',
+        '<img src="./Img/26.png" alt="">',
+        '<img src="./Img/27.png" alt="">',
+        '<img src="./Img/28.png" alt="">',
+        '<img src="./Img/29.png" alt="">',
+        '<img src="./Img/30.png" alt="">',
+        '<img src="./Img/31.png" alt="">',
+        '<img src="./Img/32.png" alt="">'
+    ]
 
-var listaD8 = [
-    '<img src="./Img/33.png" alt="">', 
-    '<img src="./Img/34.png" alt="">',
-    '<img src="./Img/35.png" alt="">',
-    '<img src="./Img/36.png" alt="">',
-    '<img src="./Img/37.png" alt="">',
-    '<img src="./Img/38.png" alt="">',
-    '<img src="./Img/39.png" alt="">',
-    '<img src="./Img/40.png" alt="">'
-]
+    var listaD8 = [
+        '<img src="./Img/33.png" alt="">',
+        '<img src="./Img/34.png" alt="">',
+        '<img src="./Img/35.png" alt="">',
+        '<img src="./Img/36.png" alt="">',
+        '<img src="./Img/37.png" alt="">',
+        '<img src="./Img/38.png" alt="">',
+        '<img src="./Img/39.png" alt="">',
+        '<img src="./Img/40.png" alt="">'
+    ]
 
-var listaD6 = [
-    '<img src="./Img/41.png" alt="">', 
-    '<img src="./Img/42.png" alt="">',
-    '<img src="./Img/43.png" alt="">',
-    '<img src="./Img/44.png" alt="">',
-    '<img src="./Img/45.png" alt="">',
-    '<img src="./Img/46.png" alt="">'
-]
+    var listaD6 = [
+        '<img src="./Img/41.png" alt="">',
+        '<img src="./Img/42.png" alt="">',
+        '<img src="./Img/43.png" alt="">',
+        '<img src="./Img/44.png" alt="">',
+        '<img src="./Img/45.png" alt="">',
+        '<img src="./Img/46.png" alt="">'
+    ]
 
-function sortear_d20() {
-    var min = 1;
-    var max = 20;
-    var intervalo = max - min
-    var aleatorio = (Math.random()*intervalo + 1).toFixed(0);
-    
-    div_dado.innerHTML = listaD20[aleatorio - 1]
+    function sortear_d20() {
+        var min = 1;
+        var max = 20;
+        var intervalo = max - min
+        var aleatorio = (Math.random() * intervalo + 1).toFixed(0);
 
-}
+        div_dado.innerHTML = listaD20[aleatorio - 1]
 
-function sortear_d12() {
-    var min = 1;
-    var max = 12;
-    var intervalo = max - min
-    var aleatorio = (Math.random()*intervalo + 1).toFixed(0);
-    
-    div_dado.innerHTML = listaD12[aleatorio - 1]
+    }
 
-}
+    function sortear_d12() {
+        var min = 1;
+        var max = 12;
+        var intervalo = max - min
+        var aleatorio = (Math.random() * intervalo + 1).toFixed(0);
 
+        div_dado.innerHTML = listaD12[aleatorio - 1]
 
-function sortear_d8() {
-    var min = 1;
-    var max = 8;
-    var intervalo = max - min
-    var aleatorio = (Math.random()*intervalo + 1).toFixed(0);
-    
-    div_dado.innerHTML = listaD8[aleatorio - 1]
-
-}
+    }
 
 
-function sortear_d6() {
-    var min = 1;
-    var max = 6;
-    var intervalo = max - min
-    var aleatorio = (Math.random()*intervalo + 1).toFixed(0);
-    
-    div_dado.innerHTML = listaD6[aleatorio - 1]
+    function sortear_d8() {
+        var min = 1;
+        var max = 8;
+        var intervalo = max - min
+        var aleatorio = (Math.random() * intervalo + 1).toFixed(0);
 
-}
+        div_dado.innerHTML = listaD8[aleatorio - 1]
+
+    }
+
+
+    function sortear_d6() {
+        var min = 1;
+        var max = 6;
+        var intervalo = max - min
+        var aleatorio = (Math.random() * intervalo + 1).toFixed(0);
+
+        div_dado.innerHTML = listaD6[aleatorio - 1]
+
+    }
 
 </script>

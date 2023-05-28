@@ -25,7 +25,7 @@
         <aside>
 
         </aside>
-        
+
         <article>
             <div class="caixa_formulario">
                 <img src="../Public/Img/logo.png" alt="">
@@ -45,17 +45,18 @@
 
     <div class="footer">
         <div class="container">
-          <h4>Copyright by Eduardo Medina &copy; 2023</h4>
-          <span class="version">v1.0.0</span>
+            <h4>Copyright by Eduardo Medina &copy; 2023</h4>
+            <span class="version">v1.0.0</span>
         </div>
     </div>
 
-    
+
 </body>
+
 </html>
 
 <script>
-    function entrar () {
+    function entrar() {
         var email = email_input.value
         var senha = senha_input.value
 
@@ -65,55 +66,55 @@
 
         } else {
             fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: email,
-                senhaServer: senha
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: email,
+                    senhaServer: senha
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.id;
+
+                        cardErro.style.display = "block";
+
+                        mensagem_erro.innerHTML = "Login realizado com sucesso! Redirecionando para tela de Login...";
+
+                        setTimeout(function () {
+                            window.location = "./Dashboard.html";
+                        }, 1000); // apenas para exibir o loading
+
+                    });
+
+                } else {
+
+                    console.log("Houve um erro ao tentar realizar o login");
+
+                    cardErro.style.display = "block"
+                    alert("O Login está inválido")
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = "O Login está inválido";
             })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-
-                    cardErro.style.display = "block";
-
-                mensagem_erro.innerHTML = "Login realizado com sucesso! Redirecionando para tela de Login...";
-
-                    setTimeout(function () {
-                        window.location = "./Dashboard.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login");
-
-            cardErro.style.display = "block"
-            alert ("O Login está inválido")
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "O Login está inválido";
-        })          
         }
-    
-}
+
+    }
 </script>

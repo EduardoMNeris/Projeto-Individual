@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de Repetição</title>
+    <link rel="stylesheet" href="./CSS/dashboard.css">
+    <link rel="stylesheet" href="./CSS/repetição.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <a href="./dashboard.html"><img class="logo" src="../Public/Img/logo.png"></a href="">
+        </div>
+    </div>
+
+    <div class="sub-header">
+        <a href="./rpg.html">Sair</a>
+        <div class="subnav">
+            <button class="subnavbtn">Comunidade<i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="#company">Company</a>
+                <a href="#team">Team</a>
+                <a href="#careers">Forums</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn">Quiz<i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="./quiz.html">Quiz</a>
+                <a href="#mestre">Deliver</a>
+                <a href="#package">Package</a>
+                <a href="#express">Express</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn">Simulador<i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="./dado.html">Jogar os dados</a>
+                <a href="./repetição.html">Estrutura de Repetição</a>
+                <a href="#link3">Link 3</a>
+                <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
+            </div>
+        </div>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div></div>
+
+    <div class="info">
+        <span>
+            Os raios do sol penetravam timidamente pelos galhos das árvores enquanto o grupo de aventureiros avançava por
+            uma densa floresta. O ar estava carregado de excitação e expectativa, pois eles buscavam desvendar os mistérios
+            que assombravam aquele lugar há séculos. Contudo, sem que eles soubessem, um bando de goblins estava
+            espreitando, observando cada movimento dos aventureiros. <br><br>
+    
+            Conforme o grupo seguia seu caminho, eles ouviam sussurros indistintos e pegadas furtivas, mas acreditavam ser
+            apenas os sons naturais da floresta. Os goblins, por sua vez, permaneciam escondidos nas sombras, planejando um
+            ataque sorrateiro. Cada passo dos aventureiros era calculado e acompanhado de perto pelos pequenos seres.
+            <br><br>
+    
+            Após algumas horas de caminhada, os aventureiros chegaram a uma clareira exuberante, um local mágico e
+            reconfortante. Deslumbrados pela beleza do lugar, eles decidiram fazer uma pausa para descansar e se preparar
+            para a próxima etapa de sua jornada. <br><br>
+    
+            Enquanto o grupo relaxava e compartilhava histórias, os goblins, que estavam escondidos nas árvores ao redor,
+            perceberam que era o momento ideal para atacar. No entanto, um dos goblins, mais astuto do que os demais,
+            decidiu informar o número exato de seus companheiros antes do ataque. Ele estava confiante de que isso
+            intimidaria os aventureiros, criando uma vantagem psicológica para os goblins. <br><br>
+    
+            O goblin líder, chamado Grízok, saiu de seu esconderijo e posicionou-se no topo de uma árvore próxima à
+            clareira. Com uma voz estridente e cheia de malícia, ele anunciou: "Nós somos <input type="text"
+                id="input_qtdGoblins">!
+        </span>
+        <span>
+            Vocês não têm chance contra nós, aventureiros tolos!"
+        </span>
+        <button onclick="repetir()">hhhhh</button>
+        <div id="div_imagens"></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function repetir() {
+        var qtdGoblins = Number(input_qtdGoblins.value)
+
+        for (var i = 0; i < qtdGoblins; i++) {
+            div_imagens.innerHTML += `<img src="https://pm1.aminoapps.com/6547/497b3625f161b4847a9eb557813023526a339886_hq.jpg" alt=""> <br>`
+        }
+
+        div_imagens.innerHTML += `Os aventureiros, surpresos com a audácia do goblin, rapidamente se reagruparam e prepararam suas armas e magias. Embora momentaneamente abalados pela revelação do número de inimigos, eles não desistiriam facilmente.`
+    }
+
+</script>
