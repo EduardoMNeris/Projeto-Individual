@@ -57,6 +57,7 @@ body {
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+    width: auto;
   }
   
   .sub-header a:hover, .subnav:hover .subnavbtn {
