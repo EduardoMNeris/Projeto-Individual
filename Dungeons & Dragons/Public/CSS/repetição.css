@@ -1,5 +1,65 @@
-.info {
-    font-size: 20px;
+.banner {
+    background: url(../Img/class.jpeg);
+    background-size: cover;
+}
+
+.info-rep {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: #1b1b1b;
+}
+
+.info-rep span {
+    width: auto;
+    height: auto;
+    font-size: 18px;
     font-weight: bold;
-    color: #000000;
+    color: #fff;
+    margin: 20px;
+    font-style: italic;
+}
+
+#div_imagens {
+    width: auto;
+    height: auto;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#div_imagens img{
+    margin: 30px;
+    width: 20%;
+}
+
+input {
+    border: none;
+    border-bottom: solid 1px black;
+    background: none;
+    outline: 0;
+    color: #fff;
+}
+
+input:hover {
+   background-color: #111113;
+}
+
+button {
+    background: #cb2229;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    width: 70px;
+    height: 37px;
+    text-align: center;
+    cursor: pointer;
+}
+
+h4 {
+    margin: 30px;
+    font-style: italic;
 }

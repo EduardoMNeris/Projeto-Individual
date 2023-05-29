@@ -49,9 +49,9 @@
         <a href="#contact">Contact</a>
     </div>
 
-    <div></div>
+    <div class="banner"></div>
 
-    <div class="info">
+    <div class="info-rep">
         <span>
             Os raios do sol penetravam timidamente pelos galhos das árvores enquanto o grupo de aventureiros avançava por
             uma densa floresta. O ar estava carregado de excitação e expectativa, pois eles buscavam desvendar os mistérios
@@ -60,8 +60,7 @@
     
             Conforme o grupo seguia seu caminho, eles ouviam sussurros indistintos e pegadas furtivas, mas acreditavam ser
             apenas os sons naturais da floresta. Os goblins, por sua vez, permaneciam escondidos nas sombras, planejando um
-            ataque sorrateiro. Cada passo dos aventureiros era calculado e acompanhado de perto pelos pequenos seres.
-            <br><br>
+            ataque sorrateiro. Cada passo dos aventureiros era calculado e acompanhado de perto pelos pequenos seres. <br><br>
     
             Após algumas horas de caminhada, os aventureiros chegaram a uma clareira exuberante, um local mágico e
             reconfortante. Deslumbrados pela beleza do lugar, eles decidiram fazer uma pausa para descansar e se preparar
@@ -71,15 +70,11 @@
             perceberam que era o momento ideal para atacar. No entanto, um dos goblins, mais astuto do que os demais,
             decidiu informar o número exato de seus companheiros antes do ataque. Ele estava confiante de que isso
             intimidaria os aventureiros, criando uma vantagem psicológica para os goblins. <br><br>
-    
+
             O goblin líder, chamado Grízok, saiu de seu esconderijo e posicionou-se no topo de uma árvore próxima à
-            clareira. Com uma voz estridente e cheia de malícia, ele anunciou: "Nós somos <input type="text"
-                id="input_qtdGoblins">!
+            clareira. Com uma voz estridente e cheia de malícia, ele anunciou: "Nós somos <input type="number"
+                id="input_qtdGoblins">!  Vocês não têm chance contra nós, aventureiros tolos!"  <button onclick="repetir()">hhhhh</button>
         </span>
-        <span>
-            Vocês não têm chance contra nós, aventureiros tolos!"
-        </span>
-        <button onclick="repetir()">hhhhh</button>
         <div id="div_imagens"></div>
     </div>
 
@@ -92,11 +87,13 @@
     function repetir() {
         var qtdGoblins = Number(input_qtdGoblins.value)
 
+        div_imagens.innerHTML = ""
+
         for (var i = 0; i < qtdGoblins; i++) {
-            div_imagens.innerHTML += `<img src="https://pm1.aminoapps.com/6547/497b3625f161b4847a9eb557813023526a339886_hq.jpg" alt=""> <br>`
+            div_imagens.innerHTML += `<img src="https://pm1.aminoapps.com/6547/497b3625f161b4847a9eb557813023526a339886_hq.jpg" alt="">`
         }
 
-        div_imagens.innerHTML += `Os aventureiros, surpresos com a audácia do goblin, rapidamente se reagruparam e prepararam suas armas e magias. Embora momentaneamente abalados pela revelação do número de inimigos, eles não desistiriam facilmente.`
+        div_imagens.innerHTML += `<br><h4> Os aventureiros, surpresos com a audácia do goblin, rapidamente se reagruparam e prepararam suas armas e magias. Embora momentaneamente abalados pela revelação do número de inimigos, eles não desistiriam facilmente.</h4>`
     }
 
 </script>
