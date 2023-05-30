@@ -8,14 +8,14 @@
     <title>Login</title>
 
     <!-- Aqui colocamos o link para o arquivo de estilização-->
-    <link rel="stylesheet" href="../Public/CSS/login.css">
+    <link rel="stylesheet" href="./CSS/login.css">
 </head>
 
 <body>
     <!--  -->
     <div class="header">
         <div class="container">
-            <h1 class="titulo"><a href="../Public/rpg.html"><img src="../Public/Img/logo.png"></a></h1>
+            <h1 class="titulo"><a href="./index.html"><img src="./Img/logo.png"></a></h1>
         </div>
     </div>
 
@@ -28,14 +28,16 @@
 
         <article>
             <div class="caixa_formulario">
-                <img src="../Public/Img/logo.png" alt="">
+                <img src="./Img/logo.png" alt="">
                 <div class="formulario">
 
                     <input id="email_input" type="email" placeholder="Endereço de E-mail">
                     <input id="senha_input" type="password" placeholder="Senha">
 
                     <button onclick="entrar()">Entrar</button>
-                    <li><a href="../Public/cadastro.html">Não está registrado? <u>Junte-se a nós.</u></a></li>
+                    <li><a href="./cadastro.html">Não está registrado? <u>Junte-se a nós.</u></a></li>
+
+                    <div id="mensagem_erro"></div>
                 </div>
             </div>
         </article>
@@ -88,12 +90,11 @@
                         sessionStorage.NOME_USUARIO = json.nome;
                         sessionStorage.ID_USUARIO = json.id;
 
-                        cardErro.style.display = "block";
 
                         mensagem_erro.innerHTML = "Login realizado com sucesso! Redirecionando para tela de Login...";
 
                         setTimeout(function () {
-                            window.location = "./Dashboard.html";
+                            window.location = "./dashboard.html";
                         }, 1000); // apenas para exibir o loading
 
                     });
@@ -102,7 +103,6 @@
 
                     console.log("Houve um erro ao tentar realizar o login");
 
-                    cardErro.style.display = "block"
                     alert("O Login está inválido")
                     resposta.text().then(texto => {
                         console.error(texto);
@@ -111,7 +111,6 @@
 
             }).catch(function (erro) {
                 console.log(erro);
-                cardErro.style.display = "block"
                 mensagem_erro.innerHTML = "O Login está inválido";
             })
         }

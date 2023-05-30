@@ -8,14 +8,14 @@
     <title>Cadastro</title>
 
     <!-- Aqui colocamos o link para o arquivo de estilização-->
-    <link rel="stylesheet" href="../Public/CSS/cadastro.css">
+    <link rel="stylesheet" href="./CSS/cadastro.css">
 </head>
 
 <body>
     <!-- Nosso cabeçalho -->
     <div class="header">
         <div class="container">
-            <h1 class="titulo"><a href="../Public/rpg.html"><img src="../Public/Img/logo.png"></a></h1>
+            <h1 class="titulo"><a href="./index.html"><img src="./Img/logo.png"></a></h1>
         </div>
     </div>
 
@@ -24,7 +24,7 @@
     <div class="banner">
         <aside>
             <div class="caixa_formulario">
-                <img src="../Public/Img/logo.png" alt="">
+                <img src="./Img/logo.png" alt="">
                 <div class="formulario">
 
                     <input id="name_input" type="name" placeholder="Nome">
@@ -33,11 +33,9 @@
                     <input id="confirmacaoSenha_input" type="password" placeholder="Confirme a Senha">
 
                     <button onclick="cadastrar()">Cadastrar</button>
-                    <li class="check">
-                        <input type="checkbox">
-                        <label><u>Concordo com os termos de uso.</u>
-                        </label>
-                    </li>
+
+                    <div id="mensagem_erro"></div>
+
                 </div>
             </div>
         </aside>
@@ -59,6 +57,12 @@
 </html>
 
 <script>
+
+
+
+
+
+
     function cadastrar() {
         var nome = name_input.value
         var email = email_input.value
@@ -66,23 +70,23 @@
         var confirmeSenha = confirmacaoSenha_input.value
 
         if (nome == "" || email == "" || senha == "" || confirmeSenha == "") {
-            cardErro.style.display = "block"
+            
             mensagem_erro.innerHTML = "Os campos precisam ser preenchidos";
-            setInterval(sumirMensagem, 5000)
+           
 
-        } else if (checkbox.checked == false) {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "O termo de uso precisa ser assinado";
-            setInterval(sumirMensagem, 5000)
         } else if (email.indexOf('@') < 0) {
-            cardErro.style.display = "block"
+            
             mensagem_erro.innerHTML = "O e-mail está com o formato inválido";
-            setInterval(sumirMensagem, 5000)
+           
         } else if (senha.length < 6) {
-            cardErro.style.display = "block"
+            
             mensagem_erro.innerHTML = "A senha precisa ter mais que 6 caracteres";
-            setInterval(sumirMensagem, 5000)
-        } else {
+           
+        }  else if (senha != confirmeSenha) {
+            
+            mensagem_erro.innerHTML = "A Confirmação de senha está incorreta";
+           
+        }else {
             window.location = "./login.html"
             fetch("/usuarios/cadastrar", {
                 method: "POST",
@@ -101,7 +105,7 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    cardErro.style.display = "block";
+                    ;
 
                     mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
@@ -118,9 +122,7 @@
                 console.log(`#ERRO: ${resposta}`);
             });
         }
-        function sumirMensagem() {
-            cardErro.style.display = "none"
-        }
+        
     }
 
 
