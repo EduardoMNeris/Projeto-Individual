@@ -1,0 +1,81 @@
+.social {
+    justify-content: space-evenly;
+    align-items: center;
+    height: 750px;
+}
+
+.card {
+    /* justify-content: space-evenly; */
+    align-items: center;
+    height: 700px;
+}
+
+.regua {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.regua img {
+    width: 30%;
+}
+
+span {
+    font-size: 35px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+p {
+    width: 400px;
+    height: 70px;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+}
+
+.bola {
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    background: url(../Img/HPDM7903.JPG);
+    background-size: cover;
+    background-position: center;
+    box-shadow: black 10px 10px 10px;
+}
+
+.bola2 {
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    background: url(../Img/eduardo.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: black 10px 10px 10px;
+}
+
+.regua p {
+    width: 450px;
+    height: auto;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    text-align: justify;
+    font-style: italic;
+}
+
+.redes {
+    background-color: #17171a;
+    height: 100px;
+    color: #fff;
+    display: flex;
+    font-size: 15px;
+    justify-content: start;
+}
+
+.redes a:hover {
+    width: 25%;
+}
