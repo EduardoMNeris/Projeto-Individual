@@ -87,13 +87,19 @@
     function repetir() {
         var qtdGoblins = Number(input_qtdGoblins.value)
 
-        div_imagens.innerHTML = ""
+       if (qtdGoblins > 20){
+        alert('Calma Mestre, Tenha Piedade dos jogadores e role um D20')
+       }
 
-        for (var i = 0; i < qtdGoblins; i++) {
-            div_imagens.innerHTML += `<img src="https://pm1.aminoapps.com/6547/497b3625f161b4847a9eb557813023526a339886_hq.jpg" alt="">`
+       else {
+            div_imagens.innerHTML = ""
+
+            for (var i = 0; i < qtdGoblins; i++) {
+                div_imagens.innerHTML += `<img src="https://pm1.aminoapps.com/6547/497b3625f161b4847a9eb557813023526a339886_hq.jpg" alt="">`
+            }
+
+            div_imagens.innerHTML += `<br><h4> Os aventureiros, surpresos com a audácia do goblin, rapidamente se reagruparam e prepararam suas armas e magias. Embora momentaneamente abalados pela revelação do número de inimigos, eles não desistiriam facilmente.</h4>`
         }
-
-        div_imagens.innerHTML += `<br><h4> Os aventureiros, surpresos com a audácia do goblin, rapidamente se reagruparam e prepararam suas armas e magias. Embora momentaneamente abalados pela revelação do número de inimigos, eles não desistiriam facilmente.</h4>`
     }
 
 </script>
