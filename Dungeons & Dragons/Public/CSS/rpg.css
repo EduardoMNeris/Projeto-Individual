@@ -138,6 +138,7 @@ iframe {
     flex-direction: column;
     background-color: #111113;
     height: 550px;
+    width: 100%;
 }
 
 .social .container {
@@ -187,6 +188,7 @@ hr {
     justify-content: space-evenly;
     align-items: center;
     height: 600px;
+    width: 100%;
 }
 
 .card .container {

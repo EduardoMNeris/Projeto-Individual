@@ -17,7 +17,7 @@ var sqlServerConfig = {
     }
 }
 
-// CONEXÃO DO MYSQL WORKBENCH (LOCAL)
+// CONEXÃO DO MYSQL WORKBENCH
 var mySqlConfig = {
     host: "localhost",
     database: "ProjetoIndividual",
@@ -55,7 +55,7 @@ function executar(instrucao) {
                 resolve(resultados);
             });
             conexao.on('error', function (erro) {
-                return ("ERRO NO MySQL WORKBENCH (Local): ", erro.sqlMessage);
+                return ("ERRO NO MySQL WORKBENCH: ", erro.sqlMessage);
             });
         });
     } else {
