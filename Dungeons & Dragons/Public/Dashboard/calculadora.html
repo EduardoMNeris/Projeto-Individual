@@ -5,45 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="../CSS/calculadora.css">
+    <link rel="stylesheet" href="../CSS/dashboard.css">
 </head>
 <body>
 
-    <select name="classe" id="select_classe">
-        <option value="100">Bárbaro</option>
-        <option value="90">Bardo</option>
-        <option value="100">Bruxo</option>
-        <option value="95">Clérigo</option>
-        <option value="100">Druida</option>
-        <option value="100">Feiticeiro</option>
-        <option value="95">Guerreiro</option>
-        <option value="90">Ladino</option>
-        <option value="100">Mago</option>
-        <option value="90">Monge</option>
-        <option value="95">Paladino</option>
-        <option value="95">Ranger</option>
-    </select><br>
-    <input type="text" id="input_qtdGoblins">
-    <button onclick="calcular()">Lutem</button>
+    
+    <div class="header">
+        <div class="container">
+            <a href="./dashboard.html"><img class="logo" src="../Img/logo.png"></a href="">
+        </div>
+    </div>
+
+    <div class="sub-header">
+        <a href="../index.html">Sair</a>
+        <div class="subnav">
+            <button class="subnavbtn">Comunidade<i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="#company">Company</a>
+                <a href="#team">Team</a>
+                <a href="./mural.html">Forums</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn">Quiz<i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="./quiz.html">Quiz</a>
+                <a href="#mestre">Deliver</a>
+                <a href="#package">Package</a>
+                <a href="#express">Express</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn">Simulador<i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="./dado.html">Jogar os dados</a>
+                <a href="./repetição.html">Estrutura de Repetição</a>
+                <a href="./calculadora.html">Calculadora</a>
+                <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
+            </div>
+        </div>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="calc">
+
+    </div>
     
 </body>
 </html>
 
 <script>
 
-    function calcular(){
-        var Classe = select_classe.value
-        var qtdGoblins = input_qtdGoblins.value / 5
-        var formulaGoblins = qtdGoblins / 150 * 100
-        var formulaClasse = Classe / 150 * 100
-        var Calculo = parseInt(formulaClasse - formulaGoblins)
-
-        if (Calculo < 0){
-            Calculo = 0;
-        }
-
-        alert(`${Calculo}`)
-
-
-    }
+    
 
 </script>
