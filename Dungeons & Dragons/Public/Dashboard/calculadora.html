@@ -28,12 +28,12 @@
             </div>
         </div>
         <div class="subnav">
-            <button class="subnavbtn">Quiz<i class="fa fa-caret-down"></i></button>
+            <button class="subnavbtn">Heróis<i class="fa fa-caret-down"></i></button>
             <div class="subnav-content">
                 <a href="./quiz.html">Quiz</a>
-                <a href="#mestre">Deliver</a>
-                <a href="#package">Package</a>
-                <a href="#express">Express</a>
+                <a href="./dashboard.html">Criar um Personagem</a>
+                <a href="#package">Meus Personagens</a>
+                <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
             </div>
         </div>
         <div class="subnav">
@@ -42,7 +42,6 @@
                 <a href="./dado.html">Jogar os dados</a>
                 <a href="./repetição.html">Estrutura de Repetição</a>
                 <a href="./calculadora.html">Calculadora</a>
-                <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
             </div>
         </div>
         <a href="#contact">Contact</a>
@@ -55,7 +54,7 @@
         <span>Classe de Armadura:</span>
         <input type="number" id="input_defesa">
         <span>Habilidade Especial: <input type="checkbox" class="checkbox" id="input_habilidade"></span>
-        <button onclick="calcularDano()">Calcular</button>
+        <button onclick="calcularDano()" class="botao">Calcular</button>
         <div id="div_resultado"></div>
     </div>
 
@@ -67,7 +66,7 @@
         <input type="number" id="input_vidaAtual">
         <span>Cura Recebida:</span>
         <input type="number" id="input_cura">
-        <button onclick="calcularPontosVida()">Calcular</button>
+        <button onclick="calcularPontosVida()" class="botao">Calcular</button>
         <div id="div_resultado1"></div>
     </div>
     

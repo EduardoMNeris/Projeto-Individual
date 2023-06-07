@@ -103,3 +103,86 @@ body {
     width: 500px;
     height: 300px;
   }
+
+  .social img {
+    border-radius: 10px;
+    border: #fff solid 2px;
+  }
+
+  .info {
+    font-size: 30px;
+  }
+
+  .person {
+    width: 100%;
+    height: 650px;
+    display: flex;
+  }
+  
+  aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 650px;
+    background-color: #17171a;
+  }
+
+  aside h1 {
+    color: #fff;
+  }
+
+  .spanTitulo {
+    width: 85%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .nome-personagem {
+    padding: 10px 15px;
+    width: 79.5%;
+    margin: 20px;
+  }
+
+  .descricao-personagem {
+    padding: 30px 35px;
+    width: 74%;
+    margin: 20px;
+  }
+
+  .botao {
+    width: 84%;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #cb2229;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+
+  article {
+    width: 50%;
+    height: 650px;
+    background-color: #17171a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  iframe {
+    margin-left: 30px;
+    border-radius: 10px;
+    border: #fff solid 2px;
+}

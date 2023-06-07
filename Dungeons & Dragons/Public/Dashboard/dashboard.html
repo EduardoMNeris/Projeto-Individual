@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dash</title>
+    <link rel="stylesheet" href="../CSS/rpg.css">
     <link rel="stylesheet" href="../CSS/dashboard.css">
 </head>
 
@@ -28,12 +29,12 @@
             </div>
         </div>
         <div class="subnav">
-            <button class="subnavbtn">Quiz<i class="fa fa-caret-down"></i></button>
+            <button class="subnavbtn">Heróis<i class="fa fa-caret-down"></i></button>
             <div class="subnav-content">
                 <a href="./quiz.html">Quiz</a>
-                <a href="#mestre">Deliver</a>
-                <a href="#package">Package</a>
-                <a href="#express">Express</a>
+                <a href="#person">Criar um Personagem</a>
+                <a href="#package">Meus Personagens</a>
+                <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
             </div>
         </div>
         <div class="subnav">
@@ -42,7 +43,6 @@
                 <a href="./dado.html">Jogar os dados</a>
                 <a href="./repetição.html">Estrutura de Repetição</a>
                 <a href="./calculadora.html">Calculadora</a>
-                <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
             </div>
         </div>
         <a href="#contact">Contact</a>
@@ -50,6 +50,31 @@
 
     <div class="banner">
         <img src="../Img/LOGO_720.png" alt="">
+    </div>
+
+    <div class="social">
+        <div class="container">
+            <img src="../Img/partyPeople.jpeg" alt="" style="width: 40%;">
+            <div class="info">
+                <span>ENCONTRE UM GRUPO DE D&D PARA JOGAR</span>
+                <p>D&D é mais popular agora do que nunca, e há muitas maneiras de encontrar um grupo para jogar. Junte-se ao Dungeons & Dragons Discord para mergulhar na conversa e encontrar grupos para jogar!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="person" class="person">
+        <aside>
+            <h1>Crie seu Personagem:</h1>
+            <span class="spanTitulo">Nome do Personagem:</span>
+            <input type="text" class="nome-personagem">
+            <span class="spanTitulo">Descrição do Personagem:</span>
+            <input type="text" class="descricao-personagem">
+            <button onclick="" class="botao">Gerar Personagem</button>
+            <span class="spanTitulo"><a class="link" href="quiz.html">Descubra sua Classe ideal</a></span>
+        </aside>
+        <article>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/PdJrJkx85L8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </article>
     </div>
 
 </body>

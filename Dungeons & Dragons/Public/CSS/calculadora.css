@@ -29,7 +29,7 @@ span {
     margin: 10px;
 }
 
-button {
+.botao {
     width: 80%;
     padding: 10px 15px;
     color: #fff;
@@ -44,6 +44,7 @@ button {
 .checkbox {
     width: auto;
     height: 30px;
+    margin: 10px;
 }
 
 #div_resultado {

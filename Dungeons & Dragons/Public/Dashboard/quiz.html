@@ -20,33 +20,32 @@
   <div class="sub-header">
     <a href="../index.html">Sair</a>
     <div class="subnav">
-      <button class="subnavbtn">Comunidade<i class="fa fa-caret-down"></i></button>
-      <div class="subnav-content">
-        <a href="#company">Company</a>
-        <a href="#team">Team</a>
-        <a href="#careers">Forums</a>
-      </div>
+        <button class="subnavbtn">Comunidade<i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+            <a href="#company">Company</a>
+            <a href="#team">Team</a>
+            <a href="./mural.html">Forums</a>
+        </div>
     </div>
     <div class="subnav">
-      <button class="subnavbtn">Quiz<i class="fa fa-caret-down"></i></button>
-      <div class="subnav-content">
-        <a href="./quiz.html">Quiz</a>
-        <a href="#mestre">Deliver</a>
-        <a href="#package">Package</a>
-        <a href="#express">Express</a>
-      </div>
+        <button class="subnavbtn">Heróis<i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="./quiz.html">Quiz</a>
+            <a href="./dashboard.html">Criar um Personagem</a>
+            <a href="#package">Meus Personagens</a>
+            <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
+        </div>
     </div>
     <div class="subnav">
-      <button class="subnavbtn">Simulador<i class="fa fa-caret-down"></i></button>
-      <div class="subnav-content">
-        <a href="./dado.html">Jogar os dados</a>
-        <a href="./repetição.html">Estrutura de Repetição</a>
-        <a href="./calculadora.html">Calculadora</a>
-        <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
-      </div>
+        <button class="subnavbtn">Simulador<i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+            <a href="./dado.html">Jogar os dados</a>
+            <a href="./repetição.html">Estrutura de Repetição</a>
+            <a href="./calculadora.html">Calculadora</a>
+        </div>
     </div>
     <a href="#contact">Contact</a>
-  </div>
+</div>
 
   <div class="banner">
     <div class="container">
@@ -188,13 +187,13 @@
       div_personagem.innerHTML = `<div class="img3"></div><span>There's two main reasons why the fighter is one of the most popular classes in Dungeons & Dragons: they're easy to pick up and they're effective. Your selection of subclasses in the Player’s Handbook allow you to create the warring legend of your dreams — be a mounted knight, a deadly bowman, a warrior-caster hybrid, or something else.</span>`
     }
     else if (Resultado <= 8) {
-      div_personagem.innerHTML = '<div class="img"></div><span>The barbarian is the perfect class for those who like to run into the midst of danger and start swinging away at enemies to deal big damage. They have access to Rage, which allows them to deal additional damage with melee attacks while also taking reduced damage from common sources of damage. They are a relatively straightforward, hack-and-slash class, making them great for new D&D players.</span>'
+      div_personagem.innerHTML = '<div class="img"></div><span>Bárbaros, independente de quão diferentes sejam, são definidos por sua fúria: Inigualável, insuperável e invencível. Mais do que uma mera emoção, essa raiva é a ferocidade de um predador encurralado, a fúria implacável da tempestade, a ira infinita do mar. Para alguns sua fúria vem da comunhão com espíritos, para outros é uma reserva de ira contra um mundo repleto de dor. Para cada bárbaro a fúria é um poder que não apenas rega seu frenesi de batalha, mas também seus reflexos, resiliência e feitos de força.</span>'
     }
     else if (Resultado <= 12) {
-      div_personagem.innerHTML = '<div class="img5"></div><span>The rogue is the premiere stealth class in Dungeons & Dragons. The Sneak Attack feature allows you to deal massive amounts of damage, and Cunning Action allows you to take the Dash, Disengage, or Hide action as a bonus action, giving you a lot of maneuverability in combat. If you like sneaking around, picking locks, stealing treasure, and assassinating your enemies, rogue is the class for you.</span>'
+      div_personagem.innerHTML = '<div class="img5"></div><span>Ladinos contam com sua perícia, furtividade e as vulnerabilidades de seus inimigos para obter vantagem em qualquer situação. Eles possuem uma habilidade especial para encontrar a solução para praticamente qualquer problema, demonstrando desenvoltura e versatilidade, a chave de qualquer grupo aventureiro de sucesso. Como aventureiros, os ladinos pendem para ambos os lados da lei. Alguns são criminosos calejados que decidiram procurar sua fortuna em montes de tesouros, enquanto outros levam uma vida de aventura para escapar da lei. Alguns aprenderam e aperfeiçoaram suas perícias com o propósito explícito de se infiltrar em ruínas antigas e criptas escondidas na busca de tesouros.</span>'
     }
     else if (Resultado <= 16) {
-      div_personagem.innerHTML = `<div class="img2"></div><span>Bards use the arts to fuel their magic and to support allies on the battlefield. Thanks to their Jack of All Trades feature, they can be good at just about any ability check you'll need to make. Their spell selection is limited until you get Magical Secrets, which lets you learn two spells from any class. Overall, the bard is great if you like helping your friends succeed in and out of combat and enjoy talking up non-player characters (NPCs).</span>`
+      div_personagem.innerHTML = `<div class="img2"></div><span>Seja escolástico, skald ou espertalhão, o Bardo tece sua magia através de palavras e música para inspirar aliados, desmoralizar inimigos, manipular mentes, criar ilusões e até mesmo curar ferimentos. O bardo é um artista que se utiliza de magia para aprimorar a sua arte. Estes personagens são reconhecidos por sua versatilidade no campo de batalha, podendo atuar relativamente bem como atacante e defensor, um ótimo controlador, mas se destacando verdadeiramente como um excelente apoiador.</span>`
     }
     else if (Resultado <= 20) {
       div_personagem.innerHTML = '<div class="img4"></div><span>Wizards are the iconic spell-slingers of Dungeons & Dragons. They have the biggest selection of spells available and have numerous specializations that allow them to either focus on one of the particular schools of magic, or a particular facet of spellcasting. WIth a huge array of spells, and a great variety of subclasses, wizards are one the most flexible and most advanced classes in the game.</span>'
