@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+  <link rel="shortcut icon" href="../Img/logo.png" type="image/x-icon">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,32 +21,32 @@
   <div class="sub-header">
     <a href="../index.html">Sair</a>
     <div class="subnav">
-        <button class="subnavbtn">Comunidade<i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content">
-            <a href="#company">Company</a>
-            <a href="#team">Team</a>
-            <a href="./mural.html">Forums</a>
-        </div>
+      <button class="subnavbtn">Comunidade<i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="https://discord.com/channels/1116115519716737175/1116117516641640489">Associação</a>
+        <a href="#team">Team</a>
+        <a href="./mural.html">Forums</a>
+      </div>
     </div>
     <div class="subnav">
-        <button class="subnavbtn">Heróis<i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content">
-          <a href="./quiz.html">Quiz</a>
-            <a href="./dashboard.html">Criar um Personagem</a>
-            <a href="#package">Meus Personagens</a>
-            <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
-        </div>
+      <button class="subnavbtn">Heróis<i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="./quiz.html">Quiz</a>
+        <a href="./dashboard.html">Criar um Personagem</a>
+        <a href="#package">Meus Personagens</a>
+        <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
+      </div>
     </div>
     <div class="subnav">
-        <button class="subnavbtn">Simulador<i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content">
-            <a href="./dado.html">Jogar os dados</a>
-            <a href="./repetição.html">Estrutura de Repetição</a>
-            <a href="./calculadora.html">Calculadora</a>
-        </div>
+      <button class="subnavbtn">Simulador<i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="./dado.html">Jogar os dados</a>
+        <a href="./repetição.html">Estrutura de Repetição</a>
+        <a href="./calculadora.html">Calculadora</a>
+      </div>
     </div>
-    <a href="#contact">Contact</a>
-</div>
+    <a href="gráficos.html">Analytics</a>
+  </div>
 
   <div class="banner">
     <div class="container">
@@ -96,7 +97,7 @@
           </select>
         </div>
       </div>
-      <button onclick="Simular()">Simule Aqui</button>
+      <button onclick="resultado_quiz()">Simule Aqui</button>
       <div id="div_personagem"></div>
     </div>
   </div>
@@ -109,95 +110,126 @@
 
   var Resultado = 0;
 
-  function Simular() {
-    var P1 = select_p1.value
-    var P2 = select_p2.value
-    var P3 = select_p3.value
-    var P4 = select_p4.value
+  async function resultado_quiz() {
+    Resultado = 0;
 
-    // Pergunta 1
-    if (P1 == 'Guerreiro') {
+    var P1 = select_p1.value.toLowerCase();
+    var P2 = select_p2.value.toLowerCase();
+    var P3 = select_p3.value.toLowerCase();
+    var P4 = select_p4.value.toLowerCase();
+
+    var respostasUsuario = {
+      pergunta1: P1,
+      pergunta2: P2,
+      pergunta3: P3,
+      pergunta4: P4
+    }
+
+    var classe = "";
+
+
+
+    if (P1 == 'guerreiro') {
       Resultado += 1;
     }
-    else if (P1 == 'Barbaro') {
+    else if (P1 == 'barbaro') {
       Resultado += 2;
     }
-    else if (P1 == 'Ladino') {
+    else if (P1 == 'ladino') {
       Resultado += 3;
     }
-    else if (P1 == 'Bardo') {
+    else if (P1 == 'bardo') {
       Resultado += 4;
     }
     else {
       Resultado += 5;
     }
 
-    // Pergunta 2 
-    if (P2 == 'Guerreiro') {
+
+
+
+    if (P2 == 'guerreiro') {
       Resultado += 1;
     }
-    else if (P2 == 'Barbaro') {
+    else if (P2 == 'barbaro') {
       Resultado += 2;
     }
-    else if (P2 == 'Ladino') {
+    else if (P2 == 'ladino') {
       Resultado += 3;
     }
-    else if (P2 == 'Bardo') {
+    else if (P2 == 'bardo') {
       Resultado += 4;
     }
     else {
       Resultado += 5;
     }
 
-    // Pergunta 3
-    if (P3 == 'Guerreiro') {
+
+
+    if (P3 == 'guerreiro') {
       Resultado += 1;
     }
-    else if (P3 == 'Barbaro') {
+    else if (P3 == 'barbaro') {
       Resultado += 2;
     }
-    else if (P3 == 'Ladino') {
+    else if (P3 == 'ladino') {
       Resultado += 3;
     }
-    else if (P3 == 'Bardo') {
-      Resultado += 4;
-    }
-    else {
-      Resultado += 5;
-    }
-    // Pergunta 4
-    if (P4 == 'Guerreiro') {
-      Resultado += 1;
-    }
-    else if (P4 == 'Barbaro') {
-      Resultado += 2;
-    }
-    else if (P4 == 'Ladino') {
-      Resultado += 3;
-    }
-    else if (P4 == 'Bardo') {
+    else if (P3 == 'bardo') {
       Resultado += 4;
     }
     else {
       Resultado += 5;
     }
 
-    // Resultado
+
+
+    if (P4 == 'guerreiro') {
+      Resultado += 1;
+
+    }
+    else if (P4 == 'barbaro') {
+      Resultado += 2;
+    }
+    else if (P4 == 'ladino') {
+      Resultado += 3;
+    }
+    else if (P4 == 'bardo') {
+      Resultado += 4;
+    }
+    else {
+      Resultado += 5;
+    }
+
+
+
     if (Resultado <= 4) {
+      classe = "Guerreiro";
       div_personagem.innerHTML = `<div class="img3"></div><span>There's two main reasons why the fighter is one of the most popular classes in Dungeons & Dragons: they're easy to pick up and they're effective. Your selection of subclasses in the Player’s Handbook allow you to create the warring legend of your dreams — be a mounted knight, a deadly bowman, a warrior-caster hybrid, or something else.</span>`
     }
     else if (Resultado <= 8) {
+      classe = "Barbaro";
       div_personagem.innerHTML = '<div class="img"></div><span>Bárbaros, independente de quão diferentes sejam, são definidos por sua fúria: Inigualável, insuperável e invencível. Mais do que uma mera emoção, essa raiva é a ferocidade de um predador encurralado, a fúria implacável da tempestade, a ira infinita do mar. Para alguns sua fúria vem da comunhão com espíritos, para outros é uma reserva de ira contra um mundo repleto de dor. Para cada bárbaro a fúria é um poder que não apenas rega seu frenesi de batalha, mas também seus reflexos, resiliência e feitos de força.</span>'
     }
     else if (Resultado <= 12) {
+      classe = "Ladino";
       div_personagem.innerHTML = '<div class="img5"></div><span>Ladinos contam com sua perícia, furtividade e as vulnerabilidades de seus inimigos para obter vantagem em qualquer situação. Eles possuem uma habilidade especial para encontrar a solução para praticamente qualquer problema, demonstrando desenvoltura e versatilidade, a chave de qualquer grupo aventureiro de sucesso. Como aventureiros, os ladinos pendem para ambos os lados da lei. Alguns são criminosos calejados que decidiram procurar sua fortuna em montes de tesouros, enquanto outros levam uma vida de aventura para escapar da lei. Alguns aprenderam e aperfeiçoaram suas perícias com o propósito explícito de se infiltrar em ruínas antigas e criptas escondidas na busca de tesouros.</span>'
     }
     else if (Resultado <= 16) {
+      classe = "Bardo";
       div_personagem.innerHTML = `<div class="img2"></div><span>Seja escolástico, skald ou espertalhão, o Bardo tece sua magia através de palavras e música para inspirar aliados, desmoralizar inimigos, manipular mentes, criar ilusões e até mesmo curar ferimentos. O bardo é um artista que se utiliza de magia para aprimorar a sua arte. Estes personagens são reconhecidos por sua versatilidade no campo de batalha, podendo atuar relativamente bem como atacante e defensor, um ótimo controlador, mas se destacando verdadeiramente como um excelente apoiador.</span>`
     }
     else if (Resultado <= 20) {
+      classe = 'Mago';
       div_personagem.innerHTML = '<div class="img4"></div><span>Wizards are the iconic spell-slingers of Dungeons & Dragons. They have the biggest selection of spells available and have numerous specializations that allow them to either focus on one of the particular schools of magic, or a particular facet of spellcasting. WIth a huge array of spells, and a great variety of subclasses, wizards are one the most flexible and most advanced classes in the game.</span>'
     }
+
+
+    respostasUsuario['Resultado'] = classe;
+    var resultadoFetch = await inserirResultadoQuiz(respostasUsuario.resultado);
+    var fkResultado = resultadoFetch.insertId;
+    var responseInserirRespostasQuiz = await inserirRespostasQuiz(respostasUsuario, fkResultado);
+
   }
 
 </script>

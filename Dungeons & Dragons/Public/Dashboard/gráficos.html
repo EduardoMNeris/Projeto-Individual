@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href=".. /assets/icon.svg" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics</title>
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="../CSS/grafico.css">
+    <script src="../js/insights.js"></script>
+    <script src="../js/funcoes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<!-- <body onload=" atualizarFeed()"> -->
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <a href="./dashboard.html"><img class="logo" src="../Img/logo.png"></a href="">
+        </div>
+    </div>
+
+    <div class="sub-header">
+        <a href="../index.html">Sair</a>
+        <div class="subnav">
+            <button class="subnavbtn">Comunidade<i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="https://discord.com/channels/1116115519716737175/1116117516641640489">Associação</a>
+                <a href="#team">Team</a>
+                <a href="./mural.html">Forums</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn">Heróis<i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="./quiz.html">Quiz</a>
+                <a href="#person">Criar um Personagem</a>
+                <a href="#package">Meus Personagens</a>
+                <a href="https://www.heroforge.com/" target="_blank">Hero Forge</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn">Simulador<i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="./dado.html">Jogar os dados</a>
+                <a href="./repetição.html">Estrutura de Repetição</a>
+                <a href="./calculadora.html">Calculadora</a>
+            </div>
+        </div>
+        <a href="gráficos.html">Analytics</a>
+    </div>
+
+    <div class="janela">
+        <div class="info">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        </div>
+
+        <span>A maioria dos usuarios combinam com o</span>
+
+        <div class="conteudo">
+            <div class="card-descricao">
+                <div class="card">
+                    <b><span id="b_media_escolha_usuarios"></span></b>
+                </div>
+            </div>
+            <div class="grafico-pizza">
+                <div class="chart-container" style="position: relative; height: 80vh; width: 70vw; text-align: ">
+                    <canvas id="newChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<script>
+    var nomeUsuario = sessionStorage.NOME_USUARIO;
+    var fkResultado = sessionStorage;
+    var idUsuario = sessionStorage.ID_USUARIO;
+    var labelsRespostaPerguntas = [];
+    var labelsCountRespostasPerguntas = [];
+    var labelsRepostas = [];
+    var labelsCountRespostas = [];
+    var backgroundColorsChartPizza = [];
+
+    // obter o resultado do usuário
+    fetch("/resultados/resultado/" + idUsuario, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+        .then((resposta) => {
+            if (resposta.ok) {
+                resposta.json().then((json) => {
+                    var resultadoUsuario = document.getElementById("b_resultado_usuario");
+                    resultadoUsuario.innerHTML = json[0].resultado;
+                });
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+
+    // obter o resultado mais comum para colocar no card acima na direita
+    fetch("/resultados/comum", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+    })
+        .then((resposta) => {
+            resposta.json().then((json) => {
+                var escolhaUsuarios = document.getElementById(
+                    "b_media_escolha_usuarios"
+                );
+                escolhaUsuarios.innerHTML = json[0].resultado;
+            });
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+
+    // obter resultados para colocar no gŕafico da esquerda
+    fetch("/resultados/perguntas", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+    })
+        .then((resposta) => {
+            resposta.json().then((json) => {
+                for (var i = 0; i < json.length; i++) {
+                    labelsRespostaPerguntas.push(json[i].pergunta);
+                    labelsCountRespostasPerguntas.push(Number(json[i].count_pergunta));
+                }
+
+                const ctx = document.getElementById("myChart");
+                new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: labelsRespostaPerguntas,
+                        datasets: [
+                            {
+                                label: "Quantidade de Respostas no Quiz",
+                                data: labelsCountRespostasPerguntas,
+                                borderWidth: 1,
+                                backgroundColor: ["#D7A072", "#F2F4DC"],
+                                barThickness:
+                                    labelsRespostaPerguntas.length % 2 === 0 ? "flex" : undefined,
+                            },
+                        ],
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                            },
+                        },
+                    },
+                });
+            });
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+
+    // Função para gerar um valor aleatório entre 0 e 255 que será usado nas cores do gráfico de pizza
+    function getRandomValue() {
+        return Math.floor(Math.random() * 256);
+    }
+
+    // obter resultados distintos para colocar no gráfico da direita
+    fetch("/resultados", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+    }).then((resposta) => {
+        resposta.json().then((json) => {
+            for (var i = 0; i < json.length; i++) {
+                labelsRepostas.push(json[i].resultado);
+                labelsCountRespostas.push(json[i].quantidade_resultados);
+                backgroundColorsChartPizza.push(
+                    `rgb(${getRandomValue()}, ${getRandomValue()}, ${getRandomValue()})`
+                );
+            }
+
+            const chart = document.getElementById("newChart");
+
+            new Chart(chart, {
+                type: "bar",
+                data: {
+                    labels: labelsRepostas,
+                    datasets: [
+                        {
+                            label: "My First Dataset",
+                            data: labelsCountRespostas,
+                            backgroundColor: backgroundColorsChartPizza,
+                            hoverOffset: 4,
+                        },
+                    ],
+                },
+            });
+        });
+    });
+
+    var nomeUsuarioSpan = document.getElementById("b_usuario");
+
+    b_usuario.innerHTML = nomeUsuario;
+
+</script>

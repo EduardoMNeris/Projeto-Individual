@@ -39,14 +39,14 @@
     height: 292px;
 }
 
-.botao {
+.nav-botao {
     display: flex;
     justify-content: space-evenly;
     width: 500px;
     border-top: 1px solid #fff;
 }
 
-button {
+.botao-dado {
     margin-top: 10px;
     margin-bottom: 10px;
     background: #cb2229;

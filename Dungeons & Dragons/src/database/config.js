@@ -1,48 +1,17 @@
 var mysql = require("mysql2");
 var sql = require('mssql');
 
-// CONEXÃO DO SQL SERVER - AZURE (NUVEM)
-var sqlServerConfig = {
-    server: "SEU_SERVIDOR",
-    database: "SEU_BANCO_DE_DADOS",
-    user: "SEU_USUARIO",
-    password: "SUA_SENHA",
-    pool: {
-        max: 10,
-        min: 0,
-        idleTimeoutMillis: 30000
-    },
-    options: {
-        encrypt: true, // for azure
-    }
-}
 
-// CONEXÃO DO MYSQL WORKBENCH
+// CONEXÃO DO MYSQL WORKBENCH (LOCAL)
 var mySqlConfig = {
     host: "localhost",
-    database: "ProjetoIndividual",
+    database: "DungeonsDragons",
     user: "root",
     password: "ScottPippen33",
 };
 
 function executar(instrucao) {
-    // VERIFICA A VARIÁVEL DE AMBIENTE SETADA EM app.js
-    if (process.env.AMBIENTE_PROCESSO == "producao") {
-        return new Promise(function (resolve, reject) {
-            sql.connect(sqlServerConfig).then(function () {
-                return sql.query(instrucao);
-            }).then(function (resultados) {
-                console.log(resultados);
-                resolve(resultados.recordset);
-            }).catch(function (erro) {
-                reject(erro);
-                console.log('ERRO: ', erro);
-            });
-            sql.on('error', function (erro) {
-                return ("ERRO NO SQL SERVER (Azure): ", erro);
-            });
-        });
-    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+   if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         return new Promise(function (resolve, reject) {
             var conexao = mysql.createConnection(mySqlConfig);
             conexao.connect();
@@ -55,7 +24,7 @@ function executar(instrucao) {
                 resolve(resultados);
             });
             conexao.on('error', function (erro) {
-                return ("ERRO NO MySQL WORKBENCH: ", erro.sqlMessage);
+                return ("ERRO NO MySQL WORKBENCH (Local): ", erro.sqlMessage);
             });
         });
     } else {
