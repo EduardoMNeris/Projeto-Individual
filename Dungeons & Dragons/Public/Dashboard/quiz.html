@@ -109,6 +109,7 @@
 <script>
 
   var Resultado = 0;
+  var classe = "";
 
   async function resultado_quiz() {
     Resultado = 0;
@@ -124,9 +125,6 @@
       pergunta3: P3,
       pergunta4: P4
     }
-
-    var classe = "";
-
 
 
     if (P1 == 'guerreiro') {
@@ -225,10 +223,38 @@
     }
 
 
-    respostasUsuario['Resultado'] = classe;
-    var resultadoFetch = await inserirResultadoQuiz(respostasUsuario.resultado);
-    var fkResultado = resultadoFetch.insertId;
-    var responseInserirRespostasQuiz = await inserirRespostasQuiz(respostasUsuario, fkResultado);
+    respostasUsuario['resultado'] = classe;
+    // var resultadoFetch = await inserirResultadoQuiz(respostasUsuario.resultado);
+    // var fkResultado = resultadoFetch.insertId;
+    // var responseInserirRespostasQuiz = await inserirRespostasQuiz(respostasUsuario, fkResultado);
+    // var fkQuiz = responseInserirRespostasQuiz.insertId;
+
+    // await atualizarRespostasUsuario(sessionStorage.ID_USUARIO, fkResultado, fkQuiz);
+
+  }
+
+  function salvarResultado() {
+        var idResultado = sessionStorage.ID_RESULTADO;
+
+        var corpo = {
+            resultado: classe.value
+        }
+
+        fetch(`/resultado/salvarResultado/${idResultado}`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(corpo)
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
 
   }
 
