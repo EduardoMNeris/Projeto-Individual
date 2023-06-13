@@ -1,9 +1,9 @@
 var database = require("../database/config");
 
-function registrarResultado(resultado) {
-  console.log(resultado);
+function salvarResultado(perso) {
+  
   var instrucao = `
-        INSERT INTO resultado (resultado) VALUES ('${resultado}');
+        INSERT INTO resultado (resultado) VALUES ('${perso}');
     `;
 
   console.log("Executando a instrução SQL: \n " + instrucao);
@@ -61,7 +61,7 @@ function obterResultadosDistintos() {
 }
 
 module.exports = {
-  registrarResultado,
+  salvarResultado,
   obterResultadoPeloId,
   obterResultadoMaisComun,
   obterResultadosPerguntas,

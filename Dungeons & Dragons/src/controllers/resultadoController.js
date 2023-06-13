@@ -1,15 +1,30 @@
 var resultadoModel = require("../models/resultadoModel");
 
 function salvarResultado(req, res) {
-  const resultado = req.body.resultado;
-  resultadoModel
-    .registrarResultado(resultado)
-    .then(function (resultado) {
-      res.status(200).json(resultado);
-    })
-    .catch(function (erro) {
-      console.log(`Não foi possivel salvar o resultado: ${erro}`);
-    });
+
+  var perso = req.body.persoServer;
+
+  if (perso == undefined){
+    res.status(400).send("Seu Personagem está undefined!")
+  }
+  
+  else {
+     resultadoModel.salvarResultado(perso)
+      .then(
+        function (resultado){
+          res.json(resultado);
+        }
+      ).catch(
+        function (erro) {
+          console.log(erro);
+          console.log(
+              "\nHouve um erro ao realizar o cadastro! Erro: ",
+              erro.sqlMessage
+          );
+          res.status(500).json(erro.sqlMessage);
+        }
+      );
+  }
 }
 
 function obterResultadoPeloIdUsuario(req, res) {

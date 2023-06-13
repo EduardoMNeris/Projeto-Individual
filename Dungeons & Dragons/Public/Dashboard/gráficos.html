@@ -90,7 +90,7 @@
     var backgroundColorsChartPizza = [];
 
     // obter o resultado do usuário
-    fetch("/resultados/resultado/" + idUsuario, {
+    fetch("/resultado/resultado/" + idUsuario, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -109,7 +109,7 @@
         });
 
     // obter o resultado mais comum para colocar no card acima na direita
-    fetch("/resultados/comum", {
+    fetch("/resultado/comum", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
     })
@@ -126,7 +126,7 @@
         });
 
     // obter resultados para colocar no gŕafico da esquerda
-    fetch("/resultados/perguntas", {
+    fetch("/resultado/perguntas", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
     })
@@ -173,7 +173,7 @@
     }
 
     // obter resultados distintos para colocar no gráfico da direita
-    fetch("/resultados", {
+    fetch("/resultado", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
     }).then((resposta) => {

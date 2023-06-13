@@ -111,7 +111,7 @@
   var Resultado = 0;
   var classe = "";
 
-  async function resultado_quiz() {
+  function resultado_quiz() {
     Resultado = 0;
 
     var P1 = select_p1.value.toLowerCase();
@@ -222,30 +222,29 @@
       div_personagem.innerHTML = '<div class="img4"></div><span>Wizards are the iconic spell-slingers of Dungeons & Dragons. They have the biggest selection of spells available and have numerous specializations that allow them to either focus on one of the particular schools of magic, or a particular facet of spellcasting. WIth a huge array of spells, and a great variety of subclasses, wizards are one the most flexible and most advanced classes in the game.</span>'
     }
 
-
-    respostasUsuario['resultado'] = classe;
     // var resultadoFetch = await inserirResultadoQuiz(respostasUsuario.resultado);
     // var fkResultado = resultadoFetch.insertId;
     // var responseInserirRespostasQuiz = await inserirRespostasQuiz(respostasUsuario, fkResultado);
     // var fkQuiz = responseInserirRespostasQuiz.insertId;
 
     // await atualizarRespostasUsuario(sessionStorage.ID_USUARIO, fkResultado, fkQuiz);
-
+    salvarResultado()
   }
 
   function salvarResultado() {
-        var idResultado = sessionStorage.ID_RESULTADO;
+      var persoVar = classe;
 
-        var corpo = {
-            resultado: classe.value
-        }
+      console.log(persoVar)  
 
-        fetch(`/resultado/salvarResultado/${idResultado}`, {
-            method: "post",
+        fetch(`/resultado/salvarResultado`, {
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(corpo)
+            body: JSON.stringify({
+                persoServer: persoVar
+
+            })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);

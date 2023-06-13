@@ -3,7 +3,7 @@ var router = express.Router();
 
 var resultadoController = require("../controllers/resultadoController");
 
-router.post("/", function (req, res) {
+router.post("/salvarResultado", function (req, res) {
   resultadoController.salvarResultado(req, res);
 });
 
